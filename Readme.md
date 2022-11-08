@@ -31,6 +31,7 @@ composer install
 ### Lancer l'environnement de développement
 
 ```bash
+docker-compose up -d
 symfony serve -d
 ```
 
