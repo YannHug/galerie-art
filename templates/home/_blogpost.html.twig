@@ -1,39 +1,19 @@
 <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">BlogPost</h2>
+    <h2 class="pb-2 border-bottom">Dernières actualités</h2>
     <div class="row g-4 py-5 d-flex justify-content-between">
-        <div class="card col-12 col-md-6 col-xl-4">
-            <img src="https://picsum.photos/300/200" class="card-img-top mt-2" alt="peinture">
-            <div class="card-body">
-                <h5 class="card-title">Titre de l'actualité</h5>
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci deserunt est
-                    iure necessitatibus voluptatibus?
+        {% for blogpost in blogposts %}
+            <div class="card col-12 col-md-6 col-xl-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ blogpost.titre }}</h5>
+                    <p class="card-text">
+                        {{ blogpost.contenu |u.truncate(200, '...', false) }}
+                    </p>
+                    <a href="#" class="btn btn-primary">En savoir plus <i class="fa-solid fa-circle-chevron-right"></i></a>
+                </div>
+                <p class="card-footer d-flex justify-content-end align-items-end">
+                    <small class="text-muted">Publiée le {{ blogpost.createdAt | date('d/m/Y') }} </small>
                 </p>
-                <a href="#" class="btn btn-primary">En savoir plus <i class="fa-solid fa-circle-chevron-right"></i></a>
             </div>
-        </div>
-        <div class="card col-12 col-md-6 col-xl-4">
-            <img src="https://picsum.photos/300/200" class="card-img-top mt-2" alt="peinture">
-            <div class="card-body">
-                <h5 class="card-title">Titre de l'actualité</h5>
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci deserunt est
-                    iure necessitatibus voluptatibus?
-                </p>
-                <a href="#" class="btn btn-primary">En savoir plus <i class="fa-solid fa-circle-chevron-right"></i></a>
-            </div>
-        </div>
-        <div class="card col-12 col-md-6 col-xl-4">
-            <img src="https://picsum.photos/300/200" class="card-img-top mt-2" alt="peinture">
-            <div class="card-body">
-                <h5 class="card-title">Titre de l'actualité</h5>
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci deserunt est
-                    iure necessitatibus voluptatibus?
-                </p>
-                <a href="#" class="btn btn-primary">En savoir plus <i class="fa-solid fa-circle-chevron-right"></i></a>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 </div>
