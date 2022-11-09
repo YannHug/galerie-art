@@ -1,0 +1,5 @@
+#logo_pinceau {
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+}
