@@ -1,43 +1,24 @@
 <div class="container col-10 px-4 py-5" id="featured-3">
     <h2 class="pb-2 border-bottom">Dernières réalisations</h2>
-    <div class="card mb-3 col-md-10">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="https://picsum.photos/300/200" class="img-fluid rounded-start img-thumbnail"
-                     id="image_derniere-peinture" alt="peinture">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Titre de la peinture</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, error hic impedit laboriosam
-                        neque porro quas quisquam sit tempora temporibus!
-                    </p>
-                    <p class="card-footer d-flex justify-content-end align-items-end">
-                        <small class="text-muted">Ajouté le </small>
-                    </p>
+    {% for peinture in peintures %}
+        <div class="card mb-3 col-md-10">
+            <div class="row g-0 border border-2">
+                <div class="col-md-4">
+                    <img src="{{ peinture.file }}" class="img-fluid rounded-start img-thumbnail"
+                         id="image_derniere-peinture" alt="peinture">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ peinture.nom }}</h5>
+                        <p class="card-text">
+                            {{ peinture.description |u.truncate(200, '...', false) }}
+                        </p>
+                        <p class="card-footer d-flex justify-content-end align-items-end">
+                            <small class="text-muted">Ajoutée le {{ peinture.createdAt | date('d/m/Y') }} </small>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card mb-3 col-md-10">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="https://picsum.photos/300/200" class="img-fluid rounded-start img-thumbnail"
-                     id="image_derniere-peinture" alt="peinture">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Titre de la peinture</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, error hic impedit laboriosam
-                        neque porro quas quisquam sit tempora temporibus!
-                    </p>
-                    <p class="card-footer d-flex justify-content-end align-items-end">
-                        <small class="text-muted">Ajouté le </small>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
