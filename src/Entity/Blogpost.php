@@ -35,7 +35,7 @@ class Blogpost
     private $slug;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
@@ -96,12 +96,12 @@ class Blogpost
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\Datetime
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\Datetime $createdAt): self
     {
         $this->createdAt = $createdAt;
 
