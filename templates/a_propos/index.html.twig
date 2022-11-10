@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À Propos{% endblock %}
+
+{% block body %}
+    <div class="container my-5" id="block-apropos">
+        <div class="px-3">
+            <h2>À propos de moi.</h2>
+            <h5>Bonjour, je suis {{ peintre.prenom }} {{ peintre.nom | upper }}.</h5>
+            <div class="row d-flex justify-content-between" id="block-apropos-image">
+                <div class="col-md-5">
+                    <p class="lead">
+                        {{ peintre.aPropos }}
+                    </p>
+                    <ul>
+                        <li>Mon instagram : <i class="fa-brands fa-instagram"></i> <a
+                                    href="">{{ peintre.instagram }}</a></li>
+                        <li>Mon Email : <i class="fa-solid fa-envelope"></i> <a href="">{{ peintre.email }}</a></li>
+                    </ul>
+                    <p class="lead">
+                        <a href="#" class="btn btn-sm btn-secondary fw-bold border-white bg-white mt-4">Me Contacter</a>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1556801587-bbbb66081240?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                         alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
