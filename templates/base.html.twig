@@ -9,8 +9,8 @@
               integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
               crossorigin="anonymous">
         <link rel="stylesheet" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link href="./assets/images/logo.png" rel="shortcut icon" type="image/x-icon">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link href="{{ asset('assets/images/logo.png') }}" rel="shortcut icon" type="image/x-icon">
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
