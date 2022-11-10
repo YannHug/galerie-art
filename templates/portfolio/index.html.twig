@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+    <section class="container px-4 py-5">
+        <h2 class="pb-2 border-bottom">Portfolio</h2>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for categorie in categories %}
+                        <a href="{{ path('portfolio_categorie', {'slug': categorie.slug}) }}">
+                            {% set img = categorie.peintures| last %}
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <img src="{{ asset(img.file) }}" alt="{{ img.nom }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ categorie.nom }}</h5>
+                                        <p class="card-text">
+                                            {{ categorie.description }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

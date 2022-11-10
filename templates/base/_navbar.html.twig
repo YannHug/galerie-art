@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <img src="./assets/images/logo.png" id="logo_pinceau" alt="logo pinceau">
+        <img src="{{ asset("assets/images/logo.png") }}" id="logo_pinceau" alt="logo pinceau">
         <a class="navbar-brand" href="{{ path('homepage') }}">GalerieArt</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,8 +14,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('actualites') }}">Actualités</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false" href="{{ path('portfolio') }}">Portfolio</a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <a class="dropdown-item"
+                               href="{{ path('portfolio') }}">
+                                Toutes les catégories
+                            </a>
+                        </li>
+                        {% for categorie in categorieNavbar() %}
+                            <li>
+                                <a class="dropdown-item"
+                                   href="{{ path('portfolio_categorie', {'slug': categorie.slug}) }}">
+                                    {{ categorie.nom }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('a_propos') }}">À propos</a>
