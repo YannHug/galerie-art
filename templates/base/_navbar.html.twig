@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <img src="./assets/images/logo.png" id="logo_pinceau" alt="logo pinceau">
-        <a class="navbar-brand" href="#">GalerieArt</a>
+        <a class="navbar-brand" href="{{ path('homepage') }}">GalerieArt</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Réalisations</a>
+                    <a class="nav-link" href="{{ path('realisations') }}">Réalisations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Actualités</a>
+                    <a class="nav-link" href="{{ path('actualites') }}">Actualités</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Portfolio</a>

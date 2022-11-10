@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "98bc522dcd07382da7a12a5e3fc359b7",
+  "content-hash": "c4a3cd8f2903c2fa5eb3c79e4d8ab968",
   "packages": [
     {
       "name": "doctrine/annotations",
@@ -25,16 +25,16 @@
         "ext-tokenizer": "*",
         "php": "^7.1 || ^8.0",
         "psr/cache": "^1 || ^2 || ^3"
-            },
-            "require-dev": {
-                "doctrine/cache": "^1.11 || ^2.0",
-                "doctrine/coding-standard": "^6.0 || ^8.1",
-                "phpstan/phpstan": "^1.4.10 || ^1.8.0",
-                "phpunit/phpunit": "^7.5 || ^8.0 || ^9.1.5",
-                "symfony/cache": "^4.4 || ^5.2",
-                "vimeo/psalm": "^4.10"
-            },
-            "type": "library",
+      },
+      "require-dev": {
+        "doctrine/cache": "^1.11 || ^2.0",
+        "doctrine/coding-standard": "^6.0 || ^8.1",
+        "phpstan/phpstan": "^1.4.10 || ^1.8.0",
+        "phpunit/phpunit": "^7.5 || ^8.0 || ^9.1.5",
+        "symfony/cache": "^4.4 || ^5.2",
+        "vimeo/psalm": "^4.10"
+      },
+      "type": "library",
             "autoload": {
                 "psr-4": {
                     "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
@@ -1517,26 +1517,185 @@
             "funding": [
                 {
                     "url": "https://github.com/Ocramius",
-                    "type": "github"
+                  "type": "github"
                 },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/ocramius/proxy-manager",
-                    "type": "tidelift"
-                }
+              {
+                "url": "https://tidelift.com/funding/github/packagist/ocramius/proxy-manager",
+                "type": "tidelift"
+              }
             ],
-            "time": "2022-10-17T19:48:16+00:00"
+          "time": "2022-10-17T19:48:16+00:00"
+        },
+    {
+      "name": "knplabs/knp-components",
+      "version": "v3.6.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/KnpLabs/knp-components.git",
+        "reference": "145d74f3fbb24619a60a6f7e54aa4bd10862b07a"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/145d74f3fbb24619a60a6f7e54aa4bd10862b07a",
+        "reference": "145d74f3fbb24619a60a6f7e54aa4bd10862b07a",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.4 || ^8.0",
+        "symfony/event-dispatcher-contracts": "^2.0 || ^3.0",
+        "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0"
+      },
+      "conflict": {
+        "doctrine/dbal": "<2.10"
+      },
+      "require-dev": {
+        "doctrine/mongodb-odm": "^2.0",
+        "doctrine/orm": "^2.7",
+        "doctrine/phpcr-odm": "^1.2",
+        "ext-pdo_sqlite": "*",
+        "jackalope/jackalope-doctrine-dbal": "^1.2",
+        "phpunit/phpunit": "^9.5",
+        "propel/propel1": "^1.7",
+        "ruflin/elastica": "^7.0",
+        "solarium/solarium": "^6.0",
+        "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+        "symfony/property-access": "^4.4 || ^5.4 || ^6.0"
+      },
+      "suggest": {
+        "doctrine/common": "to allow usage pagination with Doctrine ArrayCollection",
+        "doctrine/mongodb-odm": "to allow usage pagination with Doctrine ODM MongoDB",
+        "doctrine/orm": "to allow usage pagination with Doctrine ORM",
+        "doctrine/phpcr-odm": "to allow usage pagination with Doctrine ODM PHPCR",
+        "propel/propel1": "to allow usage pagination with Propel ORM",
+        "ruflin/elastica": "to allow usage pagination with ElasticSearch Client",
+        "solarium/solarium": "to allow usage pagination with Solarium Client",
+        "symfony/property-access": "To allow sorting arrays"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "3.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Knp\\Component\\": "src/Knp/Component"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "KnpLabs Team",
+          "homepage": "https://knplabs.com"
         },
         {
-            "name": "laminas/laminas-code",
-            "version": "4.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "0337d9265bc2e6376babad8c511500821620cb30"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/0337d9265bc2e6376babad8c511500821620cb30",
+          "name": "Symfony Community",
+          "homepage": "https://github.com/KnpLabs/knp-components/contributors"
+        }
+      ],
+      "description": "Knplabs component library",
+      "homepage": "http://github.com/KnpLabs/knp-components",
+      "keywords": [
+        "components",
+        "knp",
+        "knplabs",
+        "pager",
+        "paginator"
+      ],
+      "support": {
+        "issues": "https://github.com/KnpLabs/knp-components/issues",
+        "source": "https://github.com/KnpLabs/knp-components/tree/v3.6.0"
+      },
+      "time": "2022-08-18T06:36:14+00:00"
+    },
+    {
+      "name": "knplabs/knp-paginator-bundle",
+      "version": "v5.9.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
+        "reference": "7879916a8af4f4d4668535cb0b71f55cc416da66"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/7879916a8af4f4d4668535cb0b71f55cc416da66",
+        "reference": "7879916a8af4f4d4668535cb0b71f55cc416da66",
+        "shasum": ""
+      },
+      "require": {
+        "knplabs/knp-components": "^2.4 || ^3.0",
+        "php": "^7.3 || ^8.0",
+        "symfony/config": "^4.4 || ^5.4 || ^6.0",
+        "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
+        "symfony/event-dispatcher": "^4.4 || ^5.4 || ^6.0",
+        "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+        "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+        "symfony/routing": "^4.4 || ^5.4 || ^6.0",
+        "symfony/translation": "^4.4 || ^5.4 || ^6.0",
+        "twig/twig": "^2.0 || ^3.0"
+      },
+      "require-dev": {
+        "phpstan/phpstan": "^1.2",
+        "phpunit/phpunit": "^8.5 || ^9.5",
+        "symfony/expression-language": "^4.4 || ^5.4 || ^6.0",
+        "symfony/templating": "^4.4 || ^5.4 || ^6.0"
+      },
+      "type": "symfony-bundle",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "5.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Knp\\Bundle\\PaginatorBundle\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "KnpLabs Team",
+          "homepage": "http://knplabs.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+        }
+      ],
+      "description": "Paginator bundle for Symfony to automate pagination and simplify sorting and other features",
+      "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+      "keywords": [
+        "bundle",
+        "knp",
+        "knplabs",
+        "pager",
+        "pagination",
+        "paginator",
+        "symfony"
+      ],
+      "support": {
+        "issues": "https://github.com/KnpLabs/KnpPaginatorBundle/issues",
+        "source": "https://github.com/KnpLabs/KnpPaginatorBundle/tree/v5.9.0"
+      },
+      "time": "2022-08-28T14:42:14+00:00"
+    },
+    {
+      "name": "laminas/laminas-code",
+      "version": "4.7.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/laminas/laminas-code.git",
+        "reference": "0337d9265bc2e6376babad8c511500821620cb30"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/laminas/laminas-code/zipball/0337d9265bc2e6376babad8c511500821620cb30",
                 "reference": "0337d9265bc2e6376babad8c511500821620cb30",
                 "shasum": ""
             },
@@ -7823,10 +7982,10 @@
                 "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.4.0"
             },
             "funding": [
-                {
-                    "url": "https://github.com/fabpot",
-                  "type": "github"
-                },
+              {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+              },
               {
                 "url": "https://tidelift.com/funding/github/packagist/twig/twig",
                 "type": "tidelift"
@@ -7917,16 +8076,16 @@
       "dist": {
         "type": "zip",
         "url": "https://api.github.com/repos/twigphp/Twig/zipball/c38fd6b0b7f370c198db91ffd02e23b517426b58",
-                "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-ctype": "^1.8",
-                "symfony/polyfill-mbstring": "^1.3"
-            },
-            "require-dev": {
-                "psr/container": "^1.0",
+        "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.2.5",
+        "symfony/polyfill-ctype": "^1.8",
+        "symfony/polyfill-mbstring": "^1.3"
+      },
+      "require-dev": {
+        "psr/container": "^1.0",
                 "symfony/phpunit-bridge": "^4.4.9|^5.0.9|^6.0"
             },
             "type": "library",
@@ -8295,16 +8454,16 @@
           "doctrine/collections": "<1.6.8",
           "doctrine/common": "<2.13.3 || >=3,<3.2.2"
         },
-            "require-dev": {
-                "doctrine/collections": "^1.6.8",
-                "doctrine/common": "^2.13.3 || ^3.2.2",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.23 || ^9.5.13"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/DeepCopy/deep_copy.php"
-                ],
+        "require-dev": {
+          "doctrine/collections": "^1.6.8",
+          "doctrine/common": "^2.13.3 || ^3.2.2",
+          "phpunit/phpunit": "^7.5.20 || ^8.5.23 || ^9.5.13"
+        },
+        "type": "library",
+        "autoload": {
+          "files": [
+            "src/DeepCopy/deep_copy.php"
+          ],
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
                 }
