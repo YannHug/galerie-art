@@ -18,17 +18,22 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     {% for peinture in peintures %}
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <img src="{{ asset(peinture.file) }}" alt="{{ peinture.nom }}">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ peinture.nom }}</h5>
-                                    <p class="card-text">
-                                        {{ peinture.description }}
-                                    </p>
+                        {% if peinture.portfolio %}
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <img src="{{ asset(peinture.file) }}" alt="{{ peinture.nom }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ peinture.nom }}</h5>
+                                        <p class="card-text">
+                                            {{ peinture.description }}
+                                        </p>
+                                        <a href="{{ path('realisations_details', {'slug': peinture.slug}) }}">
+                                            <button class="btn btn-sm btn-info">En savoir plus ...</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
