@@ -15,7 +15,10 @@
                                 <p class="card-text">
                                     {{ actualite.contenu |u.truncate(200, '...', false) }}
                                 </p>
-                                <p class="card-footer d-flex justify-content-end align-items-end">
+                                <p class="card-footer d-flex justify-content-between align-items-center">
+                                    <a href="{{ path('actualites_details', {'slug': actualite.slug}) }}">
+                                        <button class="btn btn-sm btn-info">En savoir plus ...</button>
+                                    </a>
                                     <small class="text-muted">Ajoutée
                                         le {{ actualite.createdAt | date('d/m/Y') }} </small>
                                 </p>

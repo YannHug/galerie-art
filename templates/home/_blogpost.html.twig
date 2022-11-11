@@ -8,7 +8,8 @@
                     <p class="card-text">
                         {{ blogpost.contenu |u.truncate(200, '...', false) }}
                     </p>
-                    <a href="#" class="btn btn-primary">En savoir plus <i class="fa-solid fa-circle-chevron-right"></i></a>
+                    <a href="{{ path('actualites_details', {'slug': blogpost.slug}) }}" class="btn btn-primary">En
+                        savoir plus <i class="fa-solid fa-circle-chevron-right"></i></a>
                 </div>
                 <p class="card-footer d-flex justify-content-end align-items-end">
                     <small class="text-muted">Publiée le {{ blogpost.createdAt | date('d/m/Y') }} </small>
