@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ peinture.nom }}{% endblock %}
+
+{% block body %}
+    <div class="container py-5">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="{{ asset(peinture.file) }}" class="img-fluid rounded-start" alt="{{ peinture.nom }}">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ peinture.nom }}</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6>Description : </h6>
+                                <p class="card-text">{{ peinture.description }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Date de réalisation : </h6>
+                                <p class="card-text">
+                                    <span class="ms-auto">{{ peinture.dateRealisation | date('d/m/Y') }}</span>
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Largeur : </h6>
+                                <p class="card-text">
+                                    <span class="ms-auto">{{ peinture.largeur }} cm</span>
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Hauteur : </h6>
+                                <p class="card-text">
+                                    <span class="ms-auto">{{ peinture.hauteur }} cm</span>
+                                </p>
+                            </li>
+                            {% if peinture.enVente %}
+                                <li class="list-group-item">
+                                    <h6>Prix : </h6>
+                                    <p class="card-text">
+                                        <span class="ms-auto">{{ peinture.prix }} €</span>
+                                    </p>
+                                </li>
+                            {% endif %}
+                        </ul>
+                        <div class="card-footer">
+                            {% for categorie in peinture.categorie %}
+                                <a href="{{ path('portfolio_categorie', {'slug': categorie.slug}) }}">
+                                    <span class="badge bg-info">{{ categorie.nom }}</span>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

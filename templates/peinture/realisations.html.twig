@@ -19,9 +19,13 @@
                                 <p class="card-text">
                                     {{ peinture.description |u.truncate(200, '...', false) }}
                                 </p>
-                                <p class="card-footer d-flex justify-content-end align-items-end">
-                                    <small class="text-muted">Ajoutée
-                                        le {{ peinture.createdAt | date('d/m/Y') }} </small>
+                                <p class="card-footer d-flex justify-content-between align-items-center">
+                                    <a href="{{ path('realisations_details', {'slug': peinture.slug}) }}">
+                                        <button class="btn btn-sm btn-info">En savoir plus ...</button>
+                                    </a>
+                                    <small class="text-muted">
+                                        Ajoutée le {{ peinture.createdAt | date('d/m/Y') }}
+                                    </small>
                                 </p>
                             </div>
                         </div>
