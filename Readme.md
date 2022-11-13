@@ -52,3 +52,13 @@ symfony console doctrine:migrations:migrate
 ```bash
 symfony console doctrine:fixtures:load
 ```
+
+## Production
+
+### Envoie des mails de contact
+
+Les mails sont stockés en BDD, pour les envoyer mettre en place un Cron sur :
+
+```bash
+symfony console app:send-contact
+```
