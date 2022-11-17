@@ -10,8 +10,8 @@ use Doctrine\Persistence\ManagerRegistry;
  * @extends ServiceEntityRepository<Blogpost>
  *
  * @method Blogpost|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Blogpost|null findAll()
  * @method Blogpost|null findOneBy(array $criteria, array $orderBy = null)
- * @method Blogpost[]    findAll()
  * @method Blogpost[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class BlogpostRepository extends ServiceEntityRepository

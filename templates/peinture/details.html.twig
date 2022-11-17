@@ -7,7 +7,8 @@
         <div class="card">
             <div class="row g-0">
                 <div class="col-md-6">
-                    <img src="{{ asset(peinture.file) }}" class="img-fluid rounded-start" alt="{{ peinture.nom }}">
+                    <img src="{{ vich_uploader_asset(peinture, 'imageFile') }}" class="img-fluid rounded-start"
+                         alt="{{ peinture.nom }}">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
