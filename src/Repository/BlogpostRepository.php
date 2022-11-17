@@ -11,7 +11,6 @@ use Doctrine\Persistence\ManagerRegistry;
  *
  * @method Blogpost|null find($id, $lockMode = null, $lockVersion = null)
  * @method Blogpost|null findOneBy(array $criteria, array $orderBy = null)
- * @method Blogpost[]    findAll()
  * @method Blogpost[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class BlogpostRepository extends ServiceEntityRepository
@@ -37,6 +36,14 @@ class BlogpostRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function findAll()
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
     }
 
     public function lastTree()
