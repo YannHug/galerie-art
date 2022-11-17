@@ -11,6 +11,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @extends ServiceEntityRepository<Peinture>
  *
  * @method Peinture|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Peinture|null findAll()
  * @method Peinture|null findOneBy(array $criteria, array $orderBy = null)
  * @method Peinture[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
@@ -37,14 +38,6 @@ class PeintureRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-    }
-
-    public function findAll()
-    {
-        return $this->createQueryBuilder('p')
-            ->orderBy('p.createdAt', 'DESC')
-            ->getQuery()
-            ->getResult();
     }
 
     public function lastTree()

@@ -18,7 +18,7 @@ class BlogpostController extends AbstractController
     public function actualites(BlogpostRepository $blogpostRepository, PaginatorInterface $paginator, Request $request):
     Response
     {
-        $data = $blogpostRepository->findAll();
+        $data = $blogpostRepository->findBy([], ['createdAt' => 'DESC']);
         $actualites = $paginator->paginate($data, $request->query->getInt('page', 1), 6);
 
         return $this->render('blogpost/actualites.html.twig', [
