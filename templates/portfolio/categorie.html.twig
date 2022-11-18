@@ -11,7 +11,8 @@
                 <p>{{ categorie.description }}</p>
             </div>
             <div class="col-md-3 d-sm-none d-md-block ">
-                <img src="{{ vich_uploader_asset(img, 'imageFile') }}" alt="{{ img.nom }}" class="img-fluid
+                <img src="{{ vich_uploader_asset(img, 'imageFile') | imagine_filter('portfolio') }}" alt="{{ img.nom }}"
+                     class="img-fluid
                 img-thumbnail rounded">
             </div>
         </div>
@@ -22,7 +23,7 @@
                         {% if peinture.portfolio %}
                             <div class="col">
                                 <div class="card shadow-sm">
-                                    <img src="{{ vich_uploader_asset(peinture, 'imageFile') }}"
+                                    <img src="{{ vich_uploader_asset(peinture, 'imageFile')| imagine_filter('portfolio') }}"
                                          alt="{{ peinture.nom }}">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ peinture.nom }}</h5>

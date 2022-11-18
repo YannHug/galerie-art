@@ -13,7 +13,8 @@
                             {% set img = categorie.peintures| last %}
                             <div class="col">
                                 <div class="card shadow-sm">
-                                    <img src="{{ vich_uploader_asset(img, 'imageFile') }}" alt="{{ img.nom }}">
+                                    <img src="{{ vich_uploader_asset(img, 'imageFile') | imagine_filter('portfolio') }}"
+                                         alt="{{ img.nom }}">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ categorie.nom }}</h5>
                                         <p class="card-text">
