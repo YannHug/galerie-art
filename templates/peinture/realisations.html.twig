@@ -9,8 +9,8 @@
             {% for peinture in peintures %}
                 <div class="card my-2 mx-1 col-lg-5">
                     <div class="row g-0 border border-2">
-                        <div class="col-md-4">
-                            <img src="{{ vich_uploader_asset(peinture, 'imageFile') }}"
+                        <div class="col-md-12">
+                            <img src="{{ vich_uploader_asset(peinture, 'imageFile') | imagine_filter('miniature') }}"
                                  class="img-fluid rounded-start img-thumbnail"
                                  id="image_derniere-peinture" alt="peinture">
                         </div>
