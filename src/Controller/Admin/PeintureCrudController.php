@@ -27,6 +27,7 @@ class PeintureCrudController extends AbstractCrudController
         return [
             TextField::new('nom'),
             TextareaField::new('description'),
+            AssociationField::new('categorie'),
             DateField::new('dateRealisation'),
             NumberField::new('largeur')->hideOnIndex(),
             NumberField::new('hauteur')->hideOnIndex(),
@@ -36,7 +37,6 @@ class PeintureCrudController extends AbstractCrudController
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('file')->setBasePath('uploads/peintures/')->onlyOnIndex(),
             SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(),
-            AssociationField::new('categorie'),
             DateField::new('createdAt')->hideOnForm(),
         ];
     }
